@@ -17,6 +17,10 @@
 
         <gui-tabela v-bind:titulos="['Titulo', 'Descrição','link']" v-bind:registros="registros"></gui-tabela>
 
+        <p v-once>{{ meuTitulo }}</p>
+
+        <p v-html="html">{{html}}</p>
+
     <script type="text/javascript">
         Vue.component('gui-titulo',{
             props: ['titulo'],
@@ -49,6 +53,7 @@
                     {titulo:'Título 3', descricao:'descrição 3', idade: '33'},
                     {titulo:'Título 4', descricao:'descrição 4', idade: '24'},
                 ],
+                html: '<a href="#">Esse é um link</a>'
             }
         });
     </script>
