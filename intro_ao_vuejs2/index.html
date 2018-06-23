@@ -21,6 +21,8 @@
 
         <p v-html="html">{{html}}</p>
 
+        <p>{{ 37.123456798 | trataValor }}</p>
+
     <script type="text/javascript">
         Vue.component('gui-titulo',{
             props: ['titulo'],
@@ -54,6 +56,11 @@
                     {titulo:'Título 4', descricao:'descrição 4', idade: '24'},
                 ],
                 html: '<a href="#">Esse é um link</a>'
+            },
+            filters: {
+                trataValor: function(valor){
+                    return ('R$ '+(valor).toFixed(2)).replace('.',',');
+                }
             }
         });
     </script>
