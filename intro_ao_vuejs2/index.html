@@ -35,6 +35,10 @@
         <p>contaMethods: {{contaMethods}}</p>
         <p>contaComputed: {{contaComputed}}</p>
 
+        <input type="text" v-model="nome" placeholder="Nome">
+
+        <p>Alterações: {{contaAlteracoes}}</p>
+
     <script type="text/javascript">
         Vue.component('gui-titulo',{
             props: ['titulo'],
@@ -69,7 +73,9 @@
                 ],
                 html: '<a href="#">Esse é um link</a>',
                 contaMethods: 0,
-                contaComputed: 0
+                contaComputed: 0,
+                nome:'',
+                contaAlteracoes: 0,
             },
             filters: {
                 trataValor: function(valor){
@@ -79,7 +85,7 @@
             methods: {
                 totalValorMetodo: function () {
                     var total = 0;
-                    this.contaMethods++;
+                    //this.contaMethods++;
                     for(item of this.registros){
                         total += item.valor;
                     }
@@ -94,6 +100,12 @@
                         total += item.valor;
                     }
                     return total;
+                }
+            },
+            watch: {
+                nome: function (valor){
+                    this.contaAlteracoes++;
+                    this.nome = valor.toUpperCase();
                 }
             }
         });
