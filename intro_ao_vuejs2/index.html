@@ -65,6 +65,11 @@
             <input type="text" v-model.lazy="busca">
         </p>
 
+        <p>Idade: {{idade}} - Tipo: {{typeof idade}}</p>
+        <p>
+            <input type="number" v-model.number="idade">
+        </p>
+
     </div>
     <script type="text/javascript">
         Vue.component('gui-titulo',{
@@ -83,7 +88,8 @@
                 sexo: null,
                 ano: 2017,
                 cores: [],
-                busca: ''
+                busca: '',
+                idade: 45
             },
         });
     </script>
