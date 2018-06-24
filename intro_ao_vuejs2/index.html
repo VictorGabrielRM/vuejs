@@ -35,6 +35,15 @@
         <label for="receberSMS">Receber SMS</label>
         <input type="checkbox" id="receberTelefone" value="telefone" v-model="notificacoes">
         <label for="receberTelefone">Receber SMS</label>
+
+        <p>Rádio: {{sexo}}</p>
+        <p>
+            <input type="radio" id="masculino" value="M" v-model="sexo">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" value="F" v-model="sexo">
+            <label for="feminino">Feminino</label>
+        </p>
+
     </div>
     <script type="text/javascript">
         Vue.component('gui-titulo',{
@@ -49,7 +58,8 @@
                 texto: '',
                 textArea: '',
                 termos: false,
-                notificacoes: []
+                notificacoes: [],
+                sexo: null
             },
         });
     </script>
