@@ -44,6 +44,22 @@
             <label for="feminino">Feminino</label>
         </p>
 
+        <p>Select: {{ano}}</p>
+        <select v-model="ano">
+            <option disabled value="">Escolha o ano</option>
+            <option value="2017">Ano de 2017</option>
+            <option value="2018">Ano de 2018</option>
+            <option value="2019">Ano de 2019</option>
+        </select>
+
+        <p>Multiple Selects: {{cores}}</p>
+        <select multiple v-model="cores">
+            <option disabled value="">Escolha o ano</option>
+            <option>Azul</option>
+            <option>Verde</option>
+            <option>Vermelho</option>
+        </select>
+
     </div>
     <script type="text/javascript">
         Vue.component('gui-titulo',{
@@ -59,7 +75,9 @@
                 textArea: '',
                 termos: false,
                 notificacoes: [],
-                sexo: null
+                sexo: null,
+                ano: 2017,
+                cores: []
             },
         });
     </script>
