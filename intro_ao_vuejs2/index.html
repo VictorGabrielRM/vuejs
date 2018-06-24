@@ -24,6 +24,10 @@
             <textarea v-model="textArea" name="" cols="30" rows="10"></textarea>
         </p>
 
+        <p>Checkbox:</p>
+        <input type="checkbox" id="aceitaTermos" v-model="termos">
+        <label for="aceitaTermos">{{termos}}</label>
+
     </div>
     <script type="text/javascript">
         Vue.component('gui-titulo',{
@@ -36,7 +40,8 @@
             el: "#app",
             data: {
                 texto: '',
-                textArea: ''
+                textArea: '',
+                termos: false
             },
         });
     </script>
