@@ -28,6 +28,13 @@
         <input type="checkbox" id="aceitaTermos" v-model="termos">
         <label for="aceitaTermos">{{termos}}</label>
 
+        <p>Multiple Checkbox: {{notificacoes}}</p>
+        <input type="checkbox" id="receberEmail" value="email" v-model="notificacoes">
+        <label for="receberEmail">Receber E-mail</label>
+        <input type="checkbox" id="receberSMS" value="sms" v-model="notificacoes">
+        <label for="receberSMS">Receber SMS</label>
+        <input type="checkbox" id="receberTelefone" value="telefone" v-model="notificacoes">
+        <label for="receberTelefone">Receber SMS</label>
     </div>
     <script type="text/javascript">
         Vue.component('gui-titulo',{
@@ -41,7 +48,8 @@
             data: {
                 texto: '',
                 textArea: '',
-                termos: false
+                termos: false,
+                notificacoes: []
             },
         });
     </script>
